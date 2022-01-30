@@ -153,7 +153,7 @@ func (wd *WinDivertHandle) RecalculateChecksums(packet *Packet, flags ChecksumFl
 	winDivertHelperCalcChecksums.Call(
 		uintptr(unsafe.Pointer(&packet.Raw[0])),
 		uintptr(packet.PacketLen),
-		uintptr(unsafe.Pointer(&packet.Addr)),
+		uintptr(unsafe.Pointer(packet.Addr)),
 		uintptr(flags))
 }
 
